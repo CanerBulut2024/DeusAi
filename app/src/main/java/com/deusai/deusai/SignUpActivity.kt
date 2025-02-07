@@ -1,13 +1,22 @@
 package com.deusai.deusai
 
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.text.InputType
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.deusai.deusai.databinding.ActivitySignUpBinding
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class SignUpActivity : AppCompatActivity() {
     // ViewBinding değişkeni tanımlanıyor
@@ -22,6 +31,14 @@ class SignUpActivity : AppCompatActivity() {
         // ViewBinding ile XML dosyasını bağlama
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        val checkBox = findViewById<CheckBox>(R.id.checkBox)
+
+        // CheckBox metnine tıklanınca dialog açılsın
+        checkBox.setOnClickListener {
+            showPrivacyDialog()
+        }
 
         // Şifre görünürlüğünü değiştiren fonksiyonlar çağırılıyor
         setupPasswordVisibilityToggle()
@@ -45,6 +62,36 @@ class SignUpActivity : AppCompatActivity() {
              signInWithFacebook()
         }
     }
+    private fun showPrivacyDialog() {
+        val dialog = Dialog(this)
+        val view = LayoutInflater.from(this).inflate(R.layout.custom_dialog, null)
+
+        val closeButton = view.findViewById<Button>(R.id.closeButton)
+        val contentText = view.findViewById<TextView>(R.id.dialogContent)
+
+        // Kullanım şartlarını burada belirleyebilirsin
+        contentText.text = """
+            • Uygulamayı kullanarak gizlilik politikamızı kabul etmiş olursunuz.
+            • Kullanıcı verileri saklanmaz ve paylaşılmaz.
+            • Uygulama kullanımı tamamen ücretsizdir.
+        """.trimIndent()
+
+        closeButton.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.setContentView(view)
+        // Pencereyi şeffaf hale getir
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.window?.setDimAmount(0.6f) // Arka planın kararma seviyesini belirle (%60 koyu)
+
+
+        // Dialog'un genişliğini belirleyerek ekranı tamamen kaplamamasını sağla
+        dialog.window?.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent) // Arka planı şeffaf yap
+
+        dialog.show()
+    }
 
     // Şifre görünürlüğünü değiştiren fonksiyon
     private fun setupPasswordVisibilityToggle() {
@@ -60,10 +107,10 @@ class SignUpActivity : AppCompatActivity() {
     private fun togglePasswordVisibility(editText: EditText, icon: ImageView) {
         if (editText.inputType == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
             editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-            icon.setImageResource(R.drawable.ic_visibility)
+            icon.setImageResource(R.drawable.ic_visibility_off)
         } else {
             editText.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-            icon.setImageResource(R.drawable.ic_visibility_off)
+            icon.setImageResource(R.drawable.ic_visibility)
         }
         editText.setSelection(editText.text.length) // İmleç konumunu korur
     }
@@ -81,12 +128,13 @@ class SignUpActivity : AppCompatActivity() {
 
     // Kayıt ol butonuna tıklandığında çalışacak fonksiyon
     private fun onSignUpClicked() {
-        val email = binding.etUsername.text.toString() // Kullanıcı adı yerine e-posta alınıyor
+        val username = binding.etUsername.text.toString()
+        val email = binding.etEposta.text.toString()
         val password = binding.etPassword.text.toString()
         val confirmPassword = binding.etPasswordConfirm.text.toString()
         val isChecked = binding.checkBox.isChecked
 
-        if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+        if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             showToast("Lütfen tüm alanları doldurun")
             return
         }
