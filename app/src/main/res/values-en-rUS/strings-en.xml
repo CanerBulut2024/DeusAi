@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">DeusAi</string>
+
+    <string name="app_logo">Application logo</string>
+
+    <string name="world_icon">world icon</string>
+    <string name="next">forward</string>
+
+    <!-- Diller -->
+    <string name="language_english">English</string>
+    <string name="language_turkish">Türkçe</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_french">Français</string>
+    <string name="language_german">Deutsch</string>
+
+    <!-- Ayarlar -->
+    <string name="language_settings_title">language settings</string>
+    <string name="change_language">change language</string>
+
+    <string name="free_filter">free filtre</string>
+    <string name="premium_filter">Premium filtre</string>
+
+
+</resources>

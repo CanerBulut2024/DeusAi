@@ -1,0 +1,247 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <!-- Kullanıcı Adı Giriş Alanı -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/edittext_background"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:paddingEnd="8dp"
+            android:src="@drawable/ic_user"
+            android:tint="#808080"/>
+
+        <EditText
+            android:id="@+id/et_username"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@null"
+            android:hint="Kullanıcı adı veya E-posta"
+            android:inputType="text"
+            android:textAlignment="textStart" />
+    </LinearLayout>
+
+    <!-- Şifre Giriş Alanı -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edittext_background"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- Kilit İkonu -->
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"
+            android:tint="#808080"
+            android:src="@drawable/ic_lock" />
+
+        <!-- Şifre EditText -->
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="Şifre"
+            android:importantForAccessibility="yes"
+            android:inputType="textPassword" />
+
+        <!-- Görünürlük İkonu -->
+        <ImageView
+            android:id="@+id/visibility_icon_1"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:contentDescription="Show/Hide Password"
+            android:focusable="true"
+            android:src="@drawable/ic_visibility" />
+    </LinearLayout>
+    <!-- Şifre Giriş Alanı -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edittext_background"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- Kilit İkonu -->
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"
+            android:tint="#808080"
+            android:src="@drawable/ic_lock" />
+
+        <!-- Şifre EditText -->
+        <EditText
+            android:id="@+id/et_password_confirm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="Şifre Tekrar"
+            android:importantForAccessibility="yes"
+            android:inputType="textPassword" />
+
+        <!-- Görünürlük İkonu -->
+        <ImageView
+            android:id="@+id/visibility_icon_2"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:contentDescription="Show/Hide Password"
+            android:focusable="true"
+            android:src="@drawable/ic_visibility" />
+    </LinearLayout>
+
+
+
+
+    <!-- Giriş yap butonu -->
+
+    <!-- Gizlilik Politikası & Kullanım Şartları -->
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="360dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:text="Gizlilik Politikası ve Kullanım Şartları"
+        android:textColor="#E20000" />
+    <Button
+        android:id="@+id/btn_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#673AB7"
+        android:text="Hesap Oluştur"
+        android:layout_marginTop="16dp" />
+
+    <!-- Başlık: "Ya da sosyal medya ile devam et" metni -->
+
+    <!-- Sosyal Medya İkonları -->
+    <TextView
+        android:id="@+id/txt_or_continue_with"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontWeight="500"
+        android:text="@string/or_continue_with"
+        android:textAlignment="center"
+        android:textColor="#676767"
+
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <!-- Google İkonu -->
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:background="@drawable/round_border">
+
+            <ImageView
+                android:id="@+id/img_google"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_google"
+                android:contentDescription="@string/google_icon"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:padding="10dp"/>
+        </LinearLayout>
+
+        <!-- Apple İkonu -->
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:background="@drawable/round_border"
+            android:layout_marginStart="12dp">
+
+            <ImageView
+                android:id="@+id/img_apple"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_apple"
+                android:contentDescription="@string/apple_icon"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:padding="10dp"/>
+        </LinearLayout>
+
+        <!-- Facebook İkonu -->
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:background="@drawable/round_border"
+            android:layout_marginStart="12dp">
+
+            <ImageView
+                android:id="@+id/img_facebook"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_facebook"
+                android:contentDescription="@string/facebook_icon"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:padding="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Alt Kısımda Giriş Yapma Butonu veya Metni -->
+    <TextView
+        android:id="@+id/txt_already_have_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zaten bir hesabım var"
+        android:textColor="#676767"
+        android:textSize="14sp"
+        android:layout_marginTop="26dp"
+        android:textAlignment="center"
+
+        android:fontWeight="400"/>
+
+    <TextView
+        android:id="@+id/txt_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:clickable="true"
+        android:fontWeight="600"
+        android:onClick="onSignUpClicked"
+        android:text="Giriş yap"
+        android:textAlignment="center"
+        android:textColor="#E20000"
+        android:textSize="14sp" />
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/favoritesFragment"
+        android:icon="@drawable/ic_favorite"
+        android:title="@string/title_favorites" />
+
+    <item
+        android:id="@+id/createFragment"
+        android:icon="@drawable/ic_create"
+        android:title="@string/title_create" />
+
+
+
+
+
+    <item
+        android:id="@+id/editFragment"
+        android:icon="@drawable/ic_edit"
+        android:title="@string/title_edit" />
+
+    <item
+        android:id="@+id/userFragment"
+        android:icon="@drawable/ic_user"
+        android:title="@string/title_user" />
+
+
+</menu>

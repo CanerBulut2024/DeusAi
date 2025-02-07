@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">DeusAi</string>
+
+    <string name="app_logo">Uygulama Logosu</string>
+
+    <string name="world_icon">Dünya simgesi</string>
+    <string name="next">İleri</string>
+
+    <!-- Diller -->
+    <string name="language_english">English</string>
+    <string name="language_turkish">Türkçe</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_french">Français</string>
+    <string name="language_german">Deutsch</string>
+
+    <!-- Ayarlar -->
+    <string name="language_settings_title">Dil Ayarları</string>
+    <string name="change_language">Dili Değiştir</string>
+
+    <string name="free_filter">Ücretsiz Filtre</string>
+    <string name="premium_filter">Premium Filtre</string>
+    <!-- login-->
+    <!-- Orta kısımda görünen metin -->
+    <string name="or_continue_with">Ya da sosyal medya ile devam et</string>
+    <!-- Sosyal medya giriş ikonlarına dair açıklamalar -->
+    <string name="google_icon">Google ile giriş yap</string>
+    <string name="apple_icon">Apple ile giriş yap</string>
+    <string name="facebook_icon">Facebook ile giriş yap</string>
+    <!-- Kullanıcı zaten bir hesabı varsa metin -->
+    <string name="i_already_have_an_account">Zaten bir hesabınız var mı?</string>
+    <!-- Giriş yapma bağlantısı metni -->
+    <string name="log_in">Giriş yap</string>
+    <string name="title_activity_xx">xx</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_community">Community</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="title_edit">Edit</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_user">User</string>
+    <string name="title_add">Add</string>
+    <string name="title_create">Create</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
