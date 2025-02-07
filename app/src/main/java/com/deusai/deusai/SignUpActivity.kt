@@ -60,10 +60,10 @@ class SignUpActivity : AppCompatActivity() {
     private fun togglePasswordVisibility(editText: EditText, icon: ImageView) {
         if (editText.inputType == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD) {
             editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-            icon.setImageResource(R.drawable.ic_visibility)
+            icon.setImageResource(R.drawable.ic_visibility_off)
         } else {
             editText.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-            icon.setImageResource(R.drawable.ic_visibility_off)
+            icon.setImageResource(R.drawable.ic_visibility)
         }
         editText.setSelection(editText.text.length) // İmleç konumunu korur
     }
@@ -81,12 +81,13 @@ class SignUpActivity : AppCompatActivity() {
 
     // Kayıt ol butonuna tıklandığında çalışacak fonksiyon
     private fun onSignUpClicked() {
-        val email = binding.etUsername.text.toString() // Kullanıcı adı yerine e-posta alınıyor
+        val username = binding.etUsername.text.toString()
+        val email = binding.etEposta.text.toString()
         val password = binding.etPassword.text.toString()
         val confirmPassword = binding.etPasswordConfirm.text.toString()
         val isChecked = binding.checkBox.isChecked
 
-        if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+        if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             showToast("Lütfen tüm alanları doldurun")
             return
         }
