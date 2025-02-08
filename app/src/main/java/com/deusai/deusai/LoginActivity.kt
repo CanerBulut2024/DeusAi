@@ -81,35 +81,36 @@ class LoginActivity : AppCompatActivity() {
         val password = binding.etPassword.text.toString()
 
         if (!isValidEmail(email)) {
-            Toast.makeText(this, "Geçerli bir e-posta adresi giriniz.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.invalid_email), Toast.LENGTH_SHORT).show()
             return
         }
 
         if (!isValidPassword(password)) {
-            Toast.makeText(this, "Şifre en az 6 karakter, bir büyük harf, bir küçük harf ve bir rakam içermelidir.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.invalid_password), Toast.LENGTH_SHORT).show()
             return
         }
 
         // Kullanıcı kontrolü
         val user = users.find { it.email == email }
         if (user == null) {
-            Toast.makeText(this, "Kayıt bulunamadı. Lütfen önce kayıt olun.", Toast.LENGTH_SHORT).show()
+
             // Kullanıcı adı ve şifre kontrolü
             if (email == "test@gmail.com" && password == "Test25") {
                 // Giriş başarılı olduğunda mesaj göster ve MainActivity'ye yönlendir
-                Toast.makeText(this, "Giriş başarılı.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
 
                 val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
                 finish()  // Bu Activity'yi kapat
+               // Toast.makeText(this, "Kayıt bulunamadı. Lütfen önce kayıt olun.", Toast.LENGTH_SHORT).show()
             } else {
                 // Kullanıcı adı veya şifre yanlışsa hata mesajı göster
-                Toast.makeText(this, "Kullanıcı adı veya şifre yanlış.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.incorrect_credentials), Toast.LENGTH_SHORT).show()
             }
         } else if (user.password != password) {
-            Toast.makeText(this, "Şifre hatalı. Lütfen tekrar deneyin.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.wrong_password), Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(this, "Giriş başarılı!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
             // Başarılı girişten sonra ana sayfaya yönlendirme
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -137,21 +138,21 @@ class LoginActivity : AppCompatActivity() {
      * Google ile giriş işlemini başlatan fonksiyon
      */
     private fun signInWithGoogle() {
-        Toast.makeText(this, "Google ile giriş yapılıyor...", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.google_icon), Toast.LENGTH_SHORT).show()
     }
 
     /**
      * Apple ile giriş işlemini başlatan fonksiyon
      */
     private fun signInWithApple() {
-        Toast.makeText(this, "Apple ile giriş yapılıyor...", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.apple_icon), Toast.LENGTH_SHORT).show()
     }
 
     /**
      * Facebook ile giriş işlemini başlatan fonksiyon
      */
     private fun signInWithFacebook() {
-        Toast.makeText(this, "Facebook ile giriş yapılıyor...", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.facebook_icon), Toast.LENGTH_SHORT).show()
     }
 
     // Kullanıcı verisi için veri sınıfı

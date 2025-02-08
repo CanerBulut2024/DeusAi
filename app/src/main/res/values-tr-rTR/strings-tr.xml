@@ -1,10 +1,12 @@
 <resources>
+    <!-- Uygulama Genel -->
     <string name="app_name">DeusAi</string>
-
     <string name="app_logo">Uygulama Logosu</string>
 
+    <!-- Dil Seçenekleri -->
     <string name="world_icon">Dünya simgesi</string>
     <string name="next">İleri</string>
+    <string name="select_language">Uygulama dilini seçiniz</string>
 
     <!-- Diller -->
     <string name="language_english">English</string>
@@ -13,12 +15,84 @@
     <string name="language_french">Français</string>
     <string name="language_german">Deutsch</string>
 
-    <!-- Ayarlar -->
+    <!-- Dil Ayarları -->
     <string name="language_settings_title">Dil Ayarları</string>
     <string name="change_language">Dili Değiştir</string>
 
+    <!-- Filtreler -->
     <string name="free_filter">Ücretsiz Filtre</string>
     <string name="premium_filter">Premium Filtre</string>
 
+    <!-- Sosyal Medya Girişleri -->
+    <string name="or_continue_with">Ya da sosyal medya ile devam et</string>
+    <string name="google_icon">Google ile giriş yap</string>
+    <string name="apple_icon">Apple ile giriş yap</string>
+    <string name="facebook_icon">Facebook ile giriş yap</string>
 
+    <!-- Hesap Yönetimi -->
+    <string name="i_already_have_an_account">Zaten bir hesabınız var mı?</string>
+    <string name="log_in">Giriş Yap</string>
+    <string name="login">Giriş Yap</string>
+    <string name="create_account_text">Bir hesap oluşturun</string>
+    <string name="signup">Kaydol</string>
+    <string name="register">Kayıt ol</string>
+    <string name="hint_username">Kullanıcı adı</string>
+    <string name="hint_email">E-posta</string>
+    <string name="hint_password">Şifre</string>
+    <string name="hint_password_repeat">Şifre Tekrar</string>
+    <string name="forgot_password">Şifremi unuttum</string>
+    <string name="forgot_password_question">Parolanızı mı unuttunuz?</string>
+    <string name="password_reset_info">*Yeni şifrenizi ayarlamanız için size bir mesaj göndereceğiz.</string>
+    <string name="send">Gönder</string>
+    <string name="close">Kapat</string>
+    <string name="privacy_policy">Gizlilik Politikası ve Kullanım Şartları</string>
+    <string name="terms_and_privacy_text">Buraya kullanım şartları ve gizlilik politikası metni gelecek...</string>
+
+    <!-- Giriş/Kayıt Hata Mesajları -->
+    <string name="invalid_email">Lütfen geçerli bir e-posta adresi girin</string>
+    <string name="invalid_password">Şifre en az 6 karakter, bir büyük harf, bir küçük harf ve bir rakam içermelidir.</string>
+    <string name="passwords_do_not_match">Şifreler eşleşmiyor</string>
+    <string name="email_already_registered">Bu e-posta adresi zaten kayıtlı</string>
+    <string name="fill_all_fields">Lütfen tüm alanları doldurun</string>
+    <string name="accept_privacy_policy">Devam etmek için Gizlilik Politikası nı kabul edin</string>
+    <string name="registration_successful">Kayıt başarılı!</string>
+    <string name="login_success">Giriş başarılı.</string>
+    <string name="no_account_found">Kayıt bulunamadı. Lütfen önce kayıt olun.</string>
+    <string name="incorrect_credentials">Kullanıcı adı veya şifre yanlış.</string>
+    <string name="wrong_password">Şifre hatalı. Lütfen tekrar deneyin.</string>
+
+    <!-- Sayfa Başlıkları -->
+    <string name="title_home">Ana Sayfa</string>
+    <string name="title_dashboard">Kontrol Paneli</string>
+    <string name="title_community">Topluluk</string>
+    <string name="title_favorites">Favoriler</string>
+    <string name="title_edit">Düzenle</string>
+    <string name="title_settings">Ayarlar</string>
+    <string name="title_user">Kullanıcı</string>
+    <string name="title_add">Ekle</string>
+    <string name="title_create">Oluştur</string>
+    <string name="title_notifications">Bildirimler</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <!-- Genel Mesajlar -->
+    <string name="hello_blank_fragment">Merhaba boş fragment</string>
+    <string name="no_favorites">Henüz favorileriniz yok.</string>
+    <string name="wait_before_resending">Lütfen bekleyin, tekrar gönderebilmek için zaman dolmalı.</string>
+    <string name="resend">Tekrar Gönder</string>
+    <string name="password_reset_sent">adresine şifre sıfırlama bağlantısı gönderildi.</string>
+
+    <!-- Kullanım Şartları ve Gizlilik Politikası -->
+    <string name="terms_and_privacy">
+        📌 KULLANIM ŞARTLARI
+        1. Bu uygulamayı kullanarak şartları kabul etmiş sayılırsınız.
+        2. Uygulama, hizmet kalitesini artırmak için bazı bilgileri toplayabilir.
+        3. Kullanıcı bilgileri üçüncü taraflarla paylaşılmaz.
+
+        📌 GİZLİLİK POLİTİKASI
+        1. Uygulama, kullanıcı verilerini koruma altına alır.
+        2. Çerezler ve takip teknolojileri kullanılabilir.
+        3. Kullanıcı bilgilerinin gizliliği önemlidir.
+
+        Daha fazla bilgi için: destek@uygulama.com
+    </string>
 </resources>

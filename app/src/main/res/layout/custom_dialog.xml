@@ -11,7 +11,7 @@
         android:id="@+id/dialogTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gizlilik Politikası ve Kullanım Şartları"
+        android:text="@string/privacy_policy"
         android:textSize="18sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -26,7 +26,7 @@
             android:id="@+id/dialogContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Buraya kullanım şartları ve gizlilik politikası metni gelecek..."
+            android:text="@string/terms_and_privacy_text"
             android:textSize="14sp"
             android:padding="8dp" />
     </ScrollView>
@@ -36,7 +36,7 @@
         android:id="@+id/closeButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kapat"
+        android:text="@string/close"
         android:backgroundTint="#E20000"
         android:textColor="#FFFFFF"
         android:layout_marginTop="8dp" />

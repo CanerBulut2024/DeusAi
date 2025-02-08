@@ -5,7 +5,15 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="16dp">
+     <!-- Başlık -->
 
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="107dp"
+         android:text="@string/login_text"
+         android:textColor="@android:color/black"
+         android:textSize="28sp"
+         android:textStyle="bold" />
      <!-- Kullanıcı Adı Giriş Alanı -->
      <LinearLayout
          android:layout_width="match_parent"
@@ -27,7 +35,7 @@
              android:layout_width="match_parent"
              android:layout_height="35dp"
              android:background="@null"
-             android:hint="Kullanıcı adı veya E-posta"
+             android:hint="@string/hint_username_email"
              android:inputType="text"
              android:textAlignment="textStart" />
      </LinearLayout>
@@ -57,7 +65,7 @@
              android:layout_height="match_parent"
              android:layout_weight="1"
              android:background="@null"
-             android:hint="Şifre"
+             android:hint="@string/hint_password"
              android:importantForAccessibility="yes"
              android:inputType="textPassword" />
 
@@ -76,15 +84,15 @@
 
 
      <!-- Şifremi unuttum -->
-    <TextView
-        android:id="@+id/tv_forgot_password"
-        android:layout_width="113dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_marginTop="4dp"
-        android:text="Şifremi unuttum"
-        android:textColor="@color/primary"
-        android:textSize="14sp" />
+     <TextView
+         android:id="@+id/tv_forgot_password"
+         android:layout_width="86dp"
+         android:layout_height="wrap_content"
+         android:layout_gravity="end"
+         android:layout_marginTop="4dp"
+         android:text="@string/forgot_password_question"
+         android:textColor="@color/primary"
+         android:textSize="14sp" />
 
     <!-- Giriş yap butonu -->
     <Button
@@ -92,7 +100,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#673AB7"
-        android:text="Giriş Yap"
+        android:text="@string/login"
         android:layout_marginTop="16dp" />
 
     <!-- Başlık: "Ya da sosyal medya ile devam et" metni -->
@@ -179,7 +187,7 @@
         android:id="@+id/txt_already_have_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bir hesap oluşurun "
+        android:text="@string/create_account_text"
         android:textColor="#676767"
         android:textSize="14sp"
         android:layout_marginTop="26dp"
@@ -195,7 +203,7 @@
          android:clickable="true"
          android:fontWeight="600"
          android:onClick="onSignUpClicked"
-         android:text="Kaydol"
+         android:text="@string/signup"
          android:textAlignment="center"
          android:textColor="#E20000"
          android:textSize="14sp" />

@@ -75,19 +75,7 @@ class SignUpActivity : AppCompatActivity() {
         val closeButton = view.findViewById<Button>(R.id.closeButton)
         val contentText = view.findViewById<TextView>(R.id.dialogContent)
 
-        contentText.text = """
-            📌 KULLANIM ŞARTLARI
-            1. Bu uygulamayı kullanarak şartları kabul etmiş sayılırsınız.
-            2. Uygulama, hizmet kalitesini artırmak için bazı bilgileri toplayabilir.
-            3. Kullanıcı bilgileri üçüncü taraflarla paylaşılmaz.
-
-            📌 GİZLİLİK POLİTİKASI
-            1. Uygulama, kullanıcı verilerini koruma altına alır.
-            2. Çerezler ve takip teknolojileri kullanılabilir.
-            3. Kullanıcı bilgilerinin gizliliği önemlidir.
-
-            Daha fazla bilgi için: destek@uygulama.com
-        """.trimIndent()
+        contentText.text = getString(R.string.terms_and_privacy).trimIndent()
 
         closeButton.setOnClickListener {
             dialog.dismiss()
@@ -143,39 +131,39 @@ class SignUpActivity : AppCompatActivity() {
         val isChecked = binding.checkBox.isChecked
 
         if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
-            showToast("Lütfen tüm alanları doldurun")
+            showToast(getString(R.string.fill_all_fields))
             return
         }
 
         if (!isValidEmail(email)) {
-            showToast("Geçerli bir e-posta adresi girin")
+            showToast(getString(R.string.invalid_email))
             return
         }
 
         if (!isValidPassword(password)) {
-            showToast("Şifre en az 8 karakter, bir büyük harf, bir küçük harf ve bir rakam içermelidir")
+            showToast(getString(R.string.invalid_password))
             return
         }
 
         if (password != confirmPassword) {
-            showToast("Şifreler eşleşmiyor")
+            showToast(getString(R.string.passwords_do_not_match))
             return
         }
 
         if (!isChecked) {
-            showToast("Devam etmek için Gizlilik Politikası'nı kabul edin")
+            showToast(getString(R.string.accept_privacy_policy))
             return
         }
 
         if (registeredEmails.contains(email)) {
-            showToast("Bu e-posta adresi zaten kayıtlı")
+            showToast(getString(R.string.email_already_registered))
             return
         }
 
         // Kullanıcıyı kayıtlı olarak listeye ekle
         registeredEmails.add(email)
 
-        showToast("Kayıt başarılı!")
+        showToast(getString(R.string.registration_successful))
     }
 
     // Giriş yap butonuna tıklandığında çalışacak fonksiyon
@@ -193,7 +181,7 @@ class SignUpActivity : AppCompatActivity() {
      * Google ile giriş işlemini başlatan fonksiyon
      */
     private fun signInWithGoogle() {
-        Toast.makeText(this, "Google ile giriş yapılıyor...", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.google_icon), Toast.LENGTH_SHORT).show()
         // Firebase veya başka bir Google giriş entegrasyonu burada olacak
     }
 
@@ -201,7 +189,7 @@ class SignUpActivity : AppCompatActivity() {
      * Apple ile giriş işlemini başlatan fonksiyon
      */
     private fun signInWithApple() {
-        Toast.makeText(this, "Apple ile giriş yapılıyor...", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.apple_icon), Toast.LENGTH_SHORT).show()
         // Apple giriş entegrasyonunu buraya ekle
     }
 
@@ -209,7 +197,7 @@ class SignUpActivity : AppCompatActivity() {
      * Facebook ile giriş işlemini başlatan fonksiyon
      */
     private fun signInWithFacebook() {
-        Toast.makeText(this, "Facebook ile giriş yapılıyor...", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, getString(R.string.facebook_icon), Toast.LENGTH_SHORT).show()
         // Facebook giriş entegrasyonunu buraya ekle
     }
 }

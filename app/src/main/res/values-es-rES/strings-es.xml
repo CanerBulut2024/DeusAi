@@ -1,24 +1,98 @@
 <resources>
+    <!-- Aplicación General -->
     <string name="app_name">DeusAi</string>
+    <string name="app_logo">Logotipo de la aplicación</string>
 
-    <string name="app_logo">Uygulama Logosu</string>
+    <!-- Opciones de Idioma -->
+    <string name="world_icon">Ícono del mundo</string>
+    <string name="next">Siguiente</string>
+    <string name="select_language">Seleccione el idioma de la aplicación</string>
 
-    <string name="world_icon">Dünya simgesi</string>
-    <string name="next">İleri</string>
-
-    <!-- Diller -->
-    <string name="language_english">English</string>
-    <string name="language_turkish">Türkçe</string>
+    <!-- Idiomas -->
+    <string name="language_english">Inglés</string>
+    <string name="language_turkish">Turco</string>
     <string name="language_spanish">Español</string>
-    <string name="language_french">Français</string>
-    <string name="language_german">Deutsch</string>
+    <string name="language_french">Francés</string>
+    <string name="language_german">Alemán</string>
 
-    <!-- Ayarlar -->
-    <string name="language_settings_title">Dil Ayarları</string>
-    <string name="change_language">Dili Değiştir</string>
+    <!-- Configuración de Idioma -->
+    <string name="language_settings_title">Configuración de idioma</string>
+    <string name="change_language">Cambiar idioma</string>
 
-    <string name="free_filter">Ücretsiz Filtre</string>
-    <string name="premium_filter">Premium Filtre</string>
+    <!-- Filtros -->
+    <string name="free_filter">Filtro gratuito</string>
+    <string name="premium_filter">Filtro premium</string>
 
+    <!-- Conexiones de Redes Sociales -->
+    <string name="or_continue_with">O continúa con una red social</string>
+    <string name="google_icon">Iniciar sesión con Google</string>
+    <string name="apple_icon">Iniciar sesión con Apple</string>
+    <string name="facebook_icon">Iniciar sesión con Facebook</string>
 
+    <!-- Gestión de Cuenta -->
+    <string name="i_already_have_an_account">¿Ya tienes una cuenta?</string>
+    <string name="log_in">Iniciar sesión</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="create_account_text">Crear una cuenta</string>
+    <string name="signup">Registrarse</string>
+    <string name="register">Registrarse</string>
+    <string name="hint_username">Nombre de usuario</string>
+    <string name="hint_email">Correo electrónico</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="hint_password_repeat">Repetir contraseña</string>
+    <string name="forgot_password">Olvidé mi contraseña</string>
+    <string name="forgot_password_question">¿Olvidaste tu contraseña?</string>
+    <string name="password_reset_info">*Te enviaremos un mensaje para restablecer tu contraseña.</string>
+    <string name="send">Enviar</string>
+    <string name="close">Cerrar</string>
+    <string name="privacy_policy">Política de privacidad y términos de uso</string>
+    <string name="terms_and_privacy_text">El texto de los términos de uso y la política de privacidad estará aquí...</string>
+
+    <!-- Mensajes de error de inicio de sesión/registro -->
+    <string name="invalid_email">Por favor, ingresa una dirección de correo electrónico válida</string>
+    <string name="invalid_password">La contraseña debe tener al menos 6 caracteres, una letra mayúscula, una minúscula y un número.</string>
+    <string name="passwords_do_not_match">Las contraseñas no coinciden</string>
+    <string name="email_already_registered">Este correo electrónico ya está registrado</string>
+    <string name="fill_all_fields">Por favor, complete todos los campos</string>
+    <string name="accept_privacy_policy">Acepta la política de privacidad para continuar</string>
+    <string name="registration_successful">¡Registro exitoso!</string>
+    <string name="login_success">Inicio de sesión exitoso.</string>
+    <string name="no_account_found">No se encontró ninguna cuenta. Por favor, regístrate primero.</string>
+    <string name="incorrect_credentials">Nombre de usuario o contraseña incorrectos.</string>
+    <string name="wrong_password">Contraseña incorrecta. Por favor, inténtalo de nuevo.</string>
+
+    <!-- Títulos de Página -->
+    <string name="title_home">Inicio</string>
+    <string name="title_dashboard">Tablero</string>
+    <string name="title_community">Comunidad</string>
+    <string name="title_favorites">Favoritos</string>
+    <string name="title_edit">Editar</string>
+    <string name="title_settings">Configuraciones</string>
+    <string name="title_user">Usuario</string>
+    <string name="title_add">Agregar</string>
+    <string name="title_create">Crear</string>
+    <string name="title_notifications">Notificaciones</string>
+    <string name="title_activity_home">ActividadInicio</string>
+
+    <!-- Mensajes Generales -->
+    <string name="hello_blank_fragment">Hola fragmento vacío</string>
+    <string name="no_favorites">Aún no tienes favoritos.</string>
+    <string name="wait_before_resending">Por favor, espere, debe esperar antes de reenviar.</string>
+    <string name="resend">Reenviar</string>
+    <string name="password_reset_sent">Se ha enviado un enlace de restablecimiento de contraseña a tu correo electrónico.</string>
+
+    <!-- Términos de Uso y Política de Privacidad -->
+    <string name="terms_and_privacy">
+        📌 TÉRMINOS DE USO
+        1. Al usar esta aplicación, aceptas los términos.
+        2. La aplicación puede recopilar cierta información para mejorar la calidad del servicio.
+        3. La información del usuario no se comparte con terceros.
+
+        📌 POLÍTICA DE PRIVACIDAD
+        1. La aplicación protege los datos del usuario.
+        2. Se pueden utilizar cookies y tecnologías de seguimiento.
+        3. La privacidad de la información del usuario es importante.
+
+        Para más información: soporte@aplicacion.com
+    </string>
 </resources>

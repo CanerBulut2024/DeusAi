@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="107dp"
-        android:text="Kayıt ol"
+        android:text="@string/register"
         android:textColor="@android:color/black"
         android:textSize="28sp"
         android:textStyle="bold" />
@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:background="@null"
-            android:hint="Kullanıcı adı "
+            android:hint="@string/hint_username"
             android:inputType="text"
             android:textAlignment="textStart" />
     </LinearLayout>
@@ -73,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:background="@null"
-            android:hint=" E-posta"
+            android:hint="@string/hint_email"
             android:inputType="text"
             android:textAlignment="textStart" />
     </LinearLayout>
@@ -109,7 +109,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@null"
-            android:hint="Şifre"
+            android:hint="@string/hint_password"
             android:importantForAccessibility="yes"
             android:inputType="textPassword" />
 
@@ -149,7 +149,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@null"
-            android:hint="Şifre Tekrar"
+            android:hint="@string/hint_password_repeat"
             android:importantForAccessibility="yes"
             android:inputType="textPassword" />
 
@@ -192,7 +192,7 @@
             android:clickable="true"
             android:focusable="true"
             android:paddingStart="8dp"
-            android:text="Gizlilik Politikası ve Kullanım Şartları"
+            android:text="@string/privacy_policy"
             android:textColor="#E20000" />
     </LinearLayout>
 
@@ -201,7 +201,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#673AB7"
-        android:text="Hesap Oluştur"
+        android:text="@string/create_account"
         android:layout_marginTop="16dp" />
 
     <!-- Başlık: "Ya da sosyal medya ile devam et" metni -->
@@ -288,7 +288,7 @@
         android:id="@+id/txt_already_have_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Zaten bir hesabım var"
+        android:text="@string/already_have_account"
         android:textColor="#676767"
         android:textSize="14sp"
         android:layout_marginTop="26dp"
@@ -304,7 +304,7 @@
         android:clickable="true"
         android:fontWeight="600"
         android:onClick="onSignUpClicked"
-        android:text="Giriş yap"
+        android:text="@string/login_text"
         android:textAlignment="center"
         android:textColor="#E20000"
         android:textSize="14sp" />

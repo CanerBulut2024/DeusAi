@@ -27,10 +27,10 @@ class ForgotPasswordActivity : AppCompatActivity() {
         binding.btnSubmit.setOnClickListener {
             val email = binding.etMail.text.toString().trim()
             if (!isValidEmail(email)) {
-                Toast.makeText(this, "Lütfen geçerli bir e-posta adresi girin", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.invalid_email), Toast.LENGTH_SHORT).show()
             } else {
                 if (isButtonDisabled && lastEmailSent == email) {
-                    Toast.makeText(this, "Lütfen bekleyin, tekrar gönderebilmek için zaman dolmalı", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.wait_before_resending), Toast.LENGTH_SHORT).show()
                 } else {
                     sendPasswordResetEmail(email)
                 }
@@ -43,7 +43,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
     }
 
     private fun sendPasswordResetEmail(email: String) {
-        Toast.makeText(this, "$email adresine şifre sıfırlama bağlantısı gönderildi.", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "$email ${getString(R.string.password_reset_sent)}", Toast.LENGTH_LONG).show()
         lastEmailSent = email
         val endTime = System.currentTimeMillis() + 120000 // 2 dakika sonrası
         sharedPreferences.edit().putLong("timerEndTime", endTime)
@@ -70,22 +70,25 @@ class ForgotPasswordActivity : AppCompatActivity() {
                     val secondsRemaining = millisUntilFinished / 1000
                     val minutes = secondsRemaining / 60
                     val seconds = secondsRemaining % 60
-                    binding.btnSubmit.text = String.format("Tekrar Gönder: %02d:%02d", minutes, seconds)
+                  //  val x=getString(R.string.app_name)
+                    binding.btnSubmit.text = String.format("${getString(R.string.resend)}: %02d:%02d", minutes, seconds)
                 }
 
                 override fun onFinish() {
                     isButtonDisabled = false
                     binding.btnSubmit.isEnabled = true
-                    binding.btnSubmit.text = "Gönder"
-                    binding.etMail.isEnabled = true // E-posta girişini tekrar aktif yap
-                    sharedPreferences.edit().remove("timerEndTime").apply()
+                    binding.btnSubmit.text = getString(R.string.send)
+                    binding.etMail.isEnabled = true // Kullanıcının yeni e-posta girmesine izin ver
+                    binding.etMail.text.clear() // E-posta giriş alanını temizle
+                    sharedPreferences.edit().remove("timerEndTime").remove("savedEmail").apply()
                 }
             }.start()
         } else {
             isButtonDisabled = false
             binding.btnSubmit.isEnabled = true
-            binding.btnSubmit.text = "Gönder"
+            binding.btnSubmit.text = getString(R.string.send)
             binding.etMail.isEnabled = true // Eğer süre bitmişse tekrar girişe izin ver
+            binding.etMail.text.clear() // E-posta giriş alanını temizle
         }
     }
 
@@ -98,8 +101,8 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
     private fun restoreUserData() {
         val savedEmail = sharedPreferences.getString("savedEmail", "")
-        binding.etMail.setText(savedEmail)
         if (!savedEmail.isNullOrEmpty()) {
+            binding.etMail.setText(savedEmail)
             binding.etMail.isEnabled = false // Kullanıcı e-postayı değiştiremesin
         }
     }

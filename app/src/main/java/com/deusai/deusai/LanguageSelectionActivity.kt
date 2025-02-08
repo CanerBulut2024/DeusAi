@@ -3,61 +3,70 @@ package com.deusai.deusai
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.deusai.deusai.databinding.ActivityLanguageSelectionBinding
 import java.util.Locale
-
 
 class LanguageSelectionActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLanguageSelectionBinding
-//
-    private var selectedLanguage: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLanguageSelectionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Dil listesini ayarla
-        val languages = listOf("English", "Türkçe", "Español", "Français", "Deutsch")
-       // adapter = LanguageAdapter(languages) { language ->
-        //    selectedLanguage = language
-        //    binding.btnNext.isEnabled = true
-       // }
+        // Dillerin listesi
+        val languages = arrayOf(
+            getString(R.string.select_language), // "Uygulama dilini seçiniz"
+            "English", "Türkçe", "Français", "Deutsch", "Español"
+        )
 
-        binding.languageList.layoutManager = LinearLayoutManager(this)
-       // binding.languageList.adapter = adapter
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, languages)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.languageSpinner.adapter = adapter
 
-        // İleri butonuna tıklandığında
-        binding.btnNext.setOnClickListener {
-            selectedLanguage?.let { lang ->
-                saveLanguagePreference(lang)
-                setAppLanguage(lang)
-                startActivity(Intent(this, LoginActivity::class.java))
-                finish()
+        binding.btnNext.isEnabled = false
+
+        // Seçilen dili kontrol et
+        binding.languageSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                binding.btnNext.isEnabled = position != 0
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                binding.btnNext.isEnabled = false
             }
         }
-    }
 
-    private fun saveLanguagePreference(language: String) {
-        val sharedPreferences = getSharedPreferences("app_preferences", MODE_PRIVATE)
-        sharedPreferences.edit().putString("selected_language", language).apply()
-    }
+        binding.btnNext.setOnClickListener {
+            val selectedLanguage = binding.languageSpinner.selectedItemPosition
+            setAppLanguage(selectedLanguage)
 
-    private fun setAppLanguage(language: String) {
-        val locale = when (language) {
-            "Türkçe" -> "tr"
-            "Español" -> "es"
-            "Français" -> "fr"
-            "Deutsch" -> "de"
-            else -> "en"
+            // Kullanıcının dili seçtiğini kaydet
+            val sharedPreferences = getSharedPreferences("AppSettings", Context.MODE_PRIVATE)
+            sharedPreferences.edit().putBoolean("LanguageSelected", true).apply()
+
+            // Giriş ekranına yönlendir
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
-        val config = resources.configuration
-        val localeObj = Locale(locale)
-        Locale.setDefault(localeObj)
-        config.setLocale(localeObj)
-        resources.updateConfiguration(config, resources.displayMetrics)
     }
+
+    private fun setAppLanguage(selectedLanguage: Int) {
+        val languageCode = when (selectedLanguage) {
+            1 -> "en"  // English
+            2 -> "tr"  // Turkish
+            3 -> "fr"  // French
+            4 -> "de"  // German
+            5 -> "es"  // Spanish
+            else -> return
+        }
+
+        LanguageHelper.setAppLanguage(this, languageCode)
+    }
+
 }
