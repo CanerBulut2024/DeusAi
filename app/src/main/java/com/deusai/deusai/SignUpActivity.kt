@@ -34,10 +34,16 @@ class SignUpActivity : AppCompatActivity() {
 
 
         val checkBox = findViewById<CheckBox>(R.id.checkBox)
+        val tvPrivacyPolicy = findViewById<TextView>(R.id.tvPrivacyPolicy)
 
-        // CheckBox metnine tıklanınca dialog açılsın
-        checkBox.setOnClickListener {
+        // Metne tıklanınca sadece diyalog açılacak, CheckBox değişmeyecek
+        tvPrivacyPolicy.setOnClickListener {
             showPrivacyDialog()
+        }
+
+        // CheckBox'a tıklanınca sadece CheckBox işaretlenecek
+        checkBox.setOnCheckedChangeListener { _, isChecked ->
+            checkBox.isChecked = isChecked
         }
 
         // Şifre görünürlüğünü değiştiren fonksiyonlar çağırılıyor
@@ -69,11 +75,18 @@ class SignUpActivity : AppCompatActivity() {
         val closeButton = view.findViewById<Button>(R.id.closeButton)
         val contentText = view.findViewById<TextView>(R.id.dialogContent)
 
-        // Kullanım şartlarını burada belirleyebilirsin
         contentText.text = """
-            • Uygulamayı kullanarak gizlilik politikamızı kabul etmiş olursunuz.
-            • Kullanıcı verileri saklanmaz ve paylaşılmaz.
-            • Uygulama kullanımı tamamen ücretsizdir.
+            📌 KULLANIM ŞARTLARI
+            1. Bu uygulamayı kullanarak şartları kabul etmiş sayılırsınız.
+            2. Uygulama, hizmet kalitesini artırmak için bazı bilgileri toplayabilir.
+            3. Kullanıcı bilgileri üçüncü taraflarla paylaşılmaz.
+
+            📌 GİZLİLİK POLİTİKASI
+            1. Uygulama, kullanıcı verilerini koruma altına alır.
+            2. Çerezler ve takip teknolojileri kullanılabilir.
+            3. Kullanıcı bilgilerinin gizliliği önemlidir.
+
+            Daha fazla bilgi için: destek@uygulama.com
         """.trimIndent()
 
         closeButton.setOnClickListener {
@@ -81,14 +94,9 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         dialog.setContentView(view)
-        // Pencereyi şeffaf hale getir
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialog.window?.setDimAmount(0.6f) // Arka planın kararma seviyesini belirle (%60 koyu)
-
-
-        // Dialog'un genişliğini belirleyerek ekranı tamamen kaplamamasını sağla
+        dialog.window?.setDimAmount(0.6f) // Arka plan %60 koyulaşsın
         dialog.window?.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent) // Arka planı şeffaf yap
 
         dialog.show()
     }
